@@ -19,7 +19,5 @@ from django.urls import path
 from varauskalenteri.views import tapahtumalistaus
 
 urlpatterns = [
-    path('varaus/', tapahtumalistaus),
-    path('varaus/<int:id>/', varaa tapahtuma)
-    path('admin/', admin.site.urls),
+     path('admin/', admin.site.urls),
 ]

@@ -1,6 +1,3 @@
-import datetime
-from operator import mod
-
 from django.db import models
 
 
@@ -9,10 +6,8 @@ class Tapahtuma(models.Model):
     kuvaus = models.TextField()
     alku = models.DateTimeField()
     loppu = models.DateTimeField()
-    osallistujat = models.ManyToManyField(
-        settings. AUTH_USER_MODEL
-        required = False,
-        ) 
+    osallistujat = models.ManyToManyField()
+    
     paikkoja = models.IntegerField
     ()
 
@@ -20,9 +15,9 @@ class Tapahtuma(models.Model):
     def __str__(self):
         return f"{self.otsikko} ({self.alku}--{self.loppu})" 
 
-    def kesto(self): -> datetime.datetime.timedelta:
+    def kesto(self): 
         return self.loppu - self.alku
 
-   def kesto_tunti(self):
+    def kesto_tunti(self):
         kesto = self.kesto()
         return kesto.total_second() /360      

@@ -13,7 +13,7 @@ def tapahtumalistaus(request):
 
 
 def varaa_tapahtuna(request, id):
-    tapahtuma = Tapahtuma.objects.get{id=id}
+    tapahtuma = Tapahtuma.objects.get(id=id)
     context = {'tapahtuma': tapahtuma}
 
     if request.method == "POST":
